@@ -24,7 +24,8 @@ namespace assignment01
 
         private void btnManageSub_Click(object sender, EventArgs e)
         {
-
+            frmSubscribe fs = new frmSubscribe();
+            fs.ShowDialog();
         }
     }
 }

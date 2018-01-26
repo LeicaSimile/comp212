@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace assignment01
 {
-    public partial class frmMain : Form
+    public partial class frmSubscribe : Form
     {
-        public frmMain()
+        public frmSubscribe()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnManageSub_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

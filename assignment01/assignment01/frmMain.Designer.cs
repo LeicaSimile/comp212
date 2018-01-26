@@ -41,6 +41,7 @@
             this.btnManageSub.TabIndex = 0;
             this.btnManageSub.Text = "Manage Subscription";
             this.btnManageSub.UseVisualStyleBackColor = true;
+            this.btnManageSub.Click += new System.EventHandler(this.btnManageSub_Click);
             // 
             // btnPublishNotification
             // 

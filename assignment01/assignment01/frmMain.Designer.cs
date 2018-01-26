@@ -44,6 +44,7 @@
             // 
             // btnPublishNotification
             // 
+            this.btnPublishNotification.Enabled = false;
             this.btnPublishNotification.Location = new System.Drawing.Point(163, 25);
             this.btnPublishNotification.Name = "btnPublishNotification";
             this.btnPublishNotification.Size = new System.Drawing.Size(136, 23);

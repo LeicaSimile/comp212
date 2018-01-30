@@ -35,12 +35,13 @@
             this.btnSubscribe = new System.Windows.Forms.Button();
             this.btnUnsubscribe = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkEmail
             // 
             this.chkEmail.AutoSize = true;
-            this.chkEmail.Location = new System.Drawing.Point(44, 32);
+            this.chkEmail.Location = new System.Drawing.Point(53, 32);
             this.chkEmail.Name = "chkEmail";
             this.chkEmail.Size = new System.Drawing.Size(143, 17);
             this.chkEmail.TabIndex = 0;
@@ -50,7 +51,7 @@
             // chkMobile
             // 
             this.chkMobile.AutoSize = true;
-            this.chkMobile.Location = new System.Drawing.Point(44, 55);
+            this.chkMobile.Location = new System.Drawing.Point(53, 55);
             this.chkMobile.Name = "chkMobile";
             this.chkMobile.Size = new System.Drawing.Size(142, 17);
             this.chkMobile.TabIndex = 1;
@@ -59,21 +60,21 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(189, 30);
+            this.txtEmail.Location = new System.Drawing.Point(198, 30);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(144, 20);
             this.txtEmail.TabIndex = 2;
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(189, 53);
+            this.txtMobile.Location = new System.Drawing.Point(198, 53);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(100, 20);
+            this.txtMobile.Size = new System.Drawing.Size(144, 20);
             this.txtMobile.TabIndex = 3;
             // 
             // btnSubscribe
             // 
-            this.btnSubscribe.Location = new System.Drawing.Point(48, 95);
+            this.btnSubscribe.Location = new System.Drawing.Point(79, 134);
             this.btnSubscribe.Name = "btnSubscribe";
             this.btnSubscribe.Size = new System.Drawing.Size(75, 23);
             this.btnSubscribe.TabIndex = 4;
@@ -82,7 +83,7 @@
             // 
             // btnUnsubscribe
             // 
-            this.btnUnsubscribe.Location = new System.Drawing.Point(129, 95);
+            this.btnUnsubscribe.Location = new System.Drawing.Point(160, 134);
             this.btnUnsubscribe.Name = "btnUnsubscribe";
             this.btnUnsubscribe.Size = new System.Drawing.Size(75, 23);
             this.btnUnsubscribe.TabIndex = 5;
@@ -91,18 +92,27 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(210, 95);
+            this.btnCancel.Location = new System.Drawing.Point(241, 134);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // lblError
+            // 
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(53, 82);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(289, 42);
+            this.lblError.TabIndex = 7;
+            // 
             // frmSubscribe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 145);
+            this.ClientSize = new System.Drawing.Size(394, 178);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUnsubscribe);
             this.Controls.Add(this.btnSubscribe);
@@ -126,5 +136,6 @@
         private System.Windows.Forms.Button btnSubscribe;
         private System.Windows.Forms.Button btnUnsubscribe;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblError;
     }
 }

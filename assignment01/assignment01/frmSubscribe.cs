@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace assignment01
 {
@@ -16,5 +17,18 @@ namespace assignment01
         {
             InitializeComponent();
         }
+
+        private bool IsEmail(string email)
+        {
+            bool isValid = false;
+            return isValid;
+        }
+
+        private bool IsPhone(string phone)
+        {
+            phone = Regex.Replace(phone, @"\D", "");
+            return (5 <= phone.Length && phone.Length <= 15);
+        }
     }
+
 }

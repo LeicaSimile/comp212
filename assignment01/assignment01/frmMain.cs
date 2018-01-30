@@ -27,5 +27,11 @@ namespace assignment01
             frmSubscribe fs = new frmSubscribe();
             fs.ShowDialog();
         }
+
+        private void btnPublishNotification_Click(object sender, EventArgs e)
+        {
+            frmPublish fp = new frmPublish();
+            fp.ShowDialog();
+        }
     }
 }

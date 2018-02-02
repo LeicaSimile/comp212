@@ -29,6 +29,11 @@ namespace assignment01
             phone = Regex.Replace(phone, @"\D", "");
             return (5 <= phone.Length && phone.Length <= 15);
         }
+
+        private bool IsDuplicate(string item, List<string> list)
+        {
+            return false;
+        }
     }
 
 }

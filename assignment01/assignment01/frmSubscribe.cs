@@ -40,6 +40,26 @@ namespace assignment01
         {
             return false;
         }
+
+        private bool IsValid()
+        {
+            string email = txtEmail.Text;
+            string mobile = txtMobile.Text;
+
+            if (!IsEmail(email))
+            {
+                lblError.Text += "Email is not valid. ";
+            }
+
+            if (!IsPhone(mobile))
+            {
+                lblError.Text += "Mobile number is not valid.";
+            }
+
+            // TODO: Check duplicates
+
+            return true;
+        }
     }
 
 }

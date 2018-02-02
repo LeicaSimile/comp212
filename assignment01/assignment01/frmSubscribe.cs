@@ -20,8 +20,14 @@ namespace assignment01
 
         private bool IsEmail(string email)
         {
-            bool isValid = false;
-            return isValid;
+            try
+            {
+                return email.Split('@')[1].Contains(".");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
         }
 
         private bool IsPhone(string phone)

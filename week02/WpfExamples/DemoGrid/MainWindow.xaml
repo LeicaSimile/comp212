@@ -20,6 +20,6 @@
         <Label Content="Last name:" Grid.Row="1" Grid.Column="0" Margin="15" HorizontalAlignment="Right" />
         <TextBox x:Name="txtFname" Grid.Row="0" Grid.Column="1" Margin="15,15,120,20"/>
         <TextBox x:Name="txtLname" Grid.Row="1" Grid.Column="1" Margin="15,15,120,20"/>
-        <Button x:Name="btnRegister" Content="Register" Grid.Row="2" Grid.Column="1" Margin="15,80,120,80" />
+        <Button x:Name="btnRegister" Content="Register" Grid.Row="2" Grid.ColumnSpan="2" Margin="180,80" />
     </Grid>
 </Window>

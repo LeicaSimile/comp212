@@ -1,0 +1,25 @@
+﻿<Window x:Class="DemoGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoGrid"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="First name:" Grid.Row="0" Grid.Column="0" Margin="15" HorizontalAlignment="Right" />
+        <Label Content="Last name:" Grid.Row="1" Grid.Column="0" Margin="15" HorizontalAlignment="Right" />
+        <TextBox x:Name="txtFname" Grid.Row="0" Grid.Column="1" Margin="15,15,120,20"/>
+        <TextBox x:Name="txtLname" Grid.Row="1" Grid.Column="1" Margin="15,15,120,20"/>
+        <Button x:Name="btnRegister" Content="Register" Grid.Row="2" Grid.Column="1" Margin="15,80,120,80" />
+    </Grid>
+</Window>

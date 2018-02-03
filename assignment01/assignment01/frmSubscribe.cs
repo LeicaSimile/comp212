@@ -22,6 +22,7 @@ namespace assignment01
         {
             try
             {
+                // Must have @ followed by . at some point
                 return email.Split('@')[1].Contains(".");
             }
             catch (IndexOutOfRangeException)
@@ -32,7 +33,10 @@ namespace assignment01
 
         private bool IsPhone(string phone)
         {
+            // Remove non-numeric characters from string
             phone = Regex.Replace(phone, @"\D", "");
+
+            // Min length 5, max length 15
             return (5 <= phone.Length && phone.Length <= 15);
         }
 

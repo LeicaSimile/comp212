@@ -64,6 +64,30 @@ namespace assignment01
 
             return true;
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                chkEmail.CheckState = CheckState.Checked;
+            }
+            else
+            {
+                chkEmail.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void txtMobile_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(txtMobile.Text))
+            {
+                chkMobile.CheckState = CheckState.Checked;
+            }
+            else
+            {
+                chkMobile.CheckState = CheckState.Unchecked;
+            }
+        }
     }
 
 }

@@ -64,6 +64,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(144, 20);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtMobile
             // 
@@ -71,6 +72,7 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(144, 20);
             this.txtMobile.TabIndex = 3;
+            this.txtMobile.TextChanged += new System.EventHandler(this.txtMobile_TextChanged);
             // 
             // btnSubscribe
             // 

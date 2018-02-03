@@ -45,22 +45,38 @@ namespace assignment01
             return false;
         }
 
-        private bool IsValid()
+        private bool IsValid(bool subscribe)
         {
             string email = txtEmail.Text;
             string mobile = txtMobile.Text;
 
-            if (!IsEmail(email))
+            if (subscribe)
             {
-                lblError.Text += "Email is not valid. ";
-            }
+                if (!IsEmail(email))
+                {
+                    lblError.Text += "Email is not valid. ";
+                }
+                else if (Subscriptions.subEmail.Contains(email))
+                {
+                    lblError.Text += "Email is already subscribed.";
+                }
 
-            if (!IsPhone(mobile))
+                if (!IsPhone(mobile))
+                {
+                    lblError.Text += "Mobile number is not valid.";
+                }
+            }
+            else // Unsubscribe
             {
-                lblError.Text += "Mobile number is not valid.";
+                if (!Subscriptions.subEmail.Contains(email))
+                {
+                    lblError.Text += "Email not found.";
+                }
+                if (!Subscriptions.subMobile.Contains(mobile))
+                {
+                    lblError.Text += "Mobile number not found.";
+                }
             }
-
-            // TODO: Check duplicates
 
             return true;
         }
@@ -88,6 +104,31 @@ namespace assignment01
                 chkMobile.CheckState = CheckState.Unchecked;
             }
         }
-    }
 
+        private void btnSubscribe_Click(object sender, EventArgs e)
+        {
+            if (IsValid(true))
+            {
+                Subscribe();
+            }
+        }
+
+        private void btnUnsubscribe_Click(object sender, EventArgs e)
+        {
+            if (IsValid(false))
+            {
+                Unsubscribe();
+            }
+        }
+
+        private void Subscribe()
+        {
+
+        }
+
+        private void Unsubscribe()
+        {
+            
+        } 
+    }
 }

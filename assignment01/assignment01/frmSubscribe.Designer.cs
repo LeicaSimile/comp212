@@ -82,6 +82,7 @@
             this.btnSubscribe.TabIndex = 4;
             this.btnSubscribe.Text = "Subscribe";
             this.btnSubscribe.UseVisualStyleBackColor = true;
+            this.btnSubscribe.Click += new System.EventHandler(this.btnSubscribe_Click);
             // 
             // btnUnsubscribe
             // 
@@ -91,6 +92,7 @@
             this.btnUnsubscribe.TabIndex = 5;
             this.btnUnsubscribe.Text = "Unsubscribe";
             this.btnUnsubscribe.UseVisualStyleBackColor = true;
+            this.btnUnsubscribe.Click += new System.EventHandler(this.btnUnsubscribe_Click);
             // 
             // btnCancel
             // 

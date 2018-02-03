@@ -16,5 +16,15 @@ namespace assignment01
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPublish_Click(object sender, EventArgs e)
+        {
+            Subscriptions.pub.PublishMessage(txtNotification.Text);
+        }
     }
 }

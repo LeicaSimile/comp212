@@ -8,7 +8,8 @@ namespace assignment01
 {
     class Subscriptions
     {
-        public static List<string> subEmail;
-        public static List<string> subMobile;
+        public static Dictionary<string, SendViaEmail> subEmail = new Dictionary<string, SendViaEmail>();
+        public static Dictionary<string, SendViaMobile> subMobile = new Dictionary<string, SendViaMobile>();
+        public static Publisher pub = new Publisher();
     }
 }

@@ -26,6 +26,13 @@ namespace assignment01
         public void Subscribe(Publisher pub)
         {
             pub.publishmsg += sendEmail;
+            Subscriptions.subEmail.Add(Email, this);
+        }
+
+        public void Unsubscribe(Publisher pub)
+        {
+            pub.publishmsg -= sendEmail;
+            Subscriptions.subMobile.Remove(Email);
         }
     }
 }

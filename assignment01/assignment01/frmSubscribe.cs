@@ -49,36 +49,46 @@ namespace assignment01
         {
             string email = txtEmail.Text;
             string mobile = txtMobile.Text;
+            bool isValid = true;
+            lblError.Text = "";
 
             if (subscribe)
             {
-                if (!IsEmail(email))
+                if (chkEmail.Checked)
                 {
-                    lblError.Text += "Email is not valid. ";
+                    if (!IsEmail(email))
+                    {
+                        lblError.Text += "Email is not valid. ";
+                        isValid = false;
+                    }
+                    else if (Subscriptions.subEmail.Keys.Contains(email))
+                    {
+                        lblError.Text += "Email is already subscribed.";
+                        isValid = false;
+                    }
                 }
-                else if (Subscriptions.subEmail.Contains(email))
-                {
-                    lblError.Text += "Email is already subscribed.";
-                }
-
-                if (!IsPhone(mobile))
+                
+                if (chkMobile.Checked && !IsPhone(mobile))
                 {
                     lblError.Text += "Mobile number is not valid.";
+                    isValid = false;
                 }
             }
             else // Unsubscribe
             {
-                if (!Subscriptions.subEmail.Contains(email))
+                if (chkEmail.Checked && !Subscriptions.subEmail.Keys.Contains(email))
                 {
                     lblError.Text += "Email not found.";
+                    isValid = false;
                 }
-                if (!Subscriptions.subMobile.Contains(mobile))
+                if (chkMobile.Checked && !Subscriptions.subMobile.Keys.Contains(mobile))
                 {
                     lblError.Text += "Mobile number not found.";
+                    isValid = false;
                 }
             }
 
-            return true;
+            return isValid;
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -123,12 +133,45 @@ namespace assignment01
 
         private void Subscribe()
         {
+            if (chkEmail.Checked)
+            {
+                string email = txtEmail.Text;
+                SendViaEmail delEmail = new SendViaEmail(email);
 
+                delEmail.Subscribe(Subscriptions.pub);
+                MessageBox.Show(String.Format("{0} subscribed.", email));
+            }
+
+            if (chkMobile.Checked)
+            {
+                string mobile = txtMobile.Text;
+                SendViaMobile delMobile = new SendViaMobile(mobile);
+                
+                delMobile.Subscribe(Subscriptions.pub);
+                MessageBox.Show(String.Format("{0} subscribed.", mobile));
+            }
         }
 
         private void Unsubscribe()
         {
-            
-        } 
+            if (chkEmail.Checked)
+            {
+                string email = txtEmail.Text;
+                Subscriptions.subEmail[email].Unsubscribe(Subscriptions.pub);
+                MessageBox.Show(String.Format("{0} unsubscribed.", email));
+            }
+
+            if (chkMobile.Checked)
+            {
+                string mobile = txtMobile.Text;
+                Subscriptions.subMobile[mobile].Unsubscribe(Subscriptions.pub);
+                MessageBox.Show(String.Format("{0} unsubscribed.", mobile));
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

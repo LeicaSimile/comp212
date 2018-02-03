@@ -25,6 +25,7 @@ namespace assignment01
         private void btnManageSub_Click(object sender, EventArgs e)
         {
             frmSubscribe fs = new frmSubscribe();
+            fs.Owner = this;
             fs.ShowDialog();
         }
 
@@ -32,6 +33,19 @@ namespace assignment01
         {
             frmPublish fp = new frmPublish();
             fp.ShowDialog();
+        }
+
+        private void frmMain_Activated(object sender, EventArgs e)
+        {
+            // Check if subscriptions are empty before enabling btnManageSub
+            if (!Subscriptions.subEmail.Any() && !Subscriptions.subMobile.Any())
+            {
+                btnPublishNotification.Enabled = false;
+            }
+            else
+            {
+                btnPublishNotification.Enabled = true;
+            }
         }
     }
 }

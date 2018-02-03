@@ -74,6 +74,7 @@
             this.Controls.Add(this.btnManageSub);
             this.Name = "frmMain";
             this.Text = "Notification Manager";
+            this.Activated += new System.EventHandler(this.frmMain_Activated);
             this.ResumeLayout(false);
 
         }

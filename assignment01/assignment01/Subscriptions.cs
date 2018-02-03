@@ -8,6 +8,7 @@ namespace assignment01
 {
     class Subscriptions
     {
-
+        public static List<string> subEmail;
+        public static List<string> subMobile;
     }
 }

@@ -8,7 +8,8 @@
         Title="MainWindow" Height="200" Width="400">
     <StackPanel>
         <local:LoginUserControl
+            x:Name="loginControl"
             DataContext="{Binding RelativeSource={RelativeSource Self}}" />
-        <Button x:Name="btnLogin" Content="Login" Margin="20" Width="100"/>
+        <Button x:Name="btnLogin" Content="Login" Margin="20" Width="100" Click="btnLogin_Click"/>
     </StackPanel>
 </Window>

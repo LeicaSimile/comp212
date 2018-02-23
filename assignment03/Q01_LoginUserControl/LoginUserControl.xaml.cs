@@ -24,5 +24,35 @@ namespace Q01_LoginUserControl
         {
             InitializeComponent();
         }
+
+        public string Username
+        {
+            get
+            {
+                return (string)GetValue(UsernameProperty);
+            }
+            set
+            {
+                SetValue(UsernameProperty, value);
+            }
+        }
+        public static DependencyProperty UsernameProperty =
+            DependencyProperty.Register(nameof(Username), typeof(string), typeof(LoginUserControl),
+                new PropertyMetadata("Username"));
+
+        public string Password
+        {
+            get
+            {
+                return (string)GetValue(PasswordProperty);
+            }
+            set
+            {
+                SetValue(PasswordProperty, value);
+            }
+        }
+        public static DependencyProperty PasswordProperty =
+            DependencyProperty.Register(nameof(Password), typeof(string), typeof(LoginUserControl),
+                new PropertyMetadata("Password"));
     }
 }

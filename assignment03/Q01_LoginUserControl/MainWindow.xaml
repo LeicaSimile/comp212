@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Q01_LoginUserControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="200" Width="400">
     <StackPanel>
-        <local:LoginUserControl />
+        <local:LoginUserControl
+            DataContext="{Binding RelativeSource={RelativeSource Self}}" />
+        <Button x:Name="btnLogin" Content="Login" Margin="20" Width="100"/>
     </StackPanel>
 </Window>

@@ -20,6 +20,15 @@ namespace Q02_Inventory
                     new InventoryItem(56, "Jig Saw", 21, 11.95),
                     new InventoryItem(3, "Wrench", 34, 7.95),
                 };
+
+            // Use LINQ to sort the data by item description
+
+            // Use LINQ to select the item description and quantity, and sort the results by quantity
+
+            // Use LINQ to select the item description and its total value (i.e., quantity * unit price),
+            // order the results by totel value
+
+            // Use LINQ to retrieve and display the most expensive item
         }
     }
 }

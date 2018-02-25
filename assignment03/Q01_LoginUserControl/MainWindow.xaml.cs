@@ -27,7 +27,8 @@ namespace Q01_LoginUserControl
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(loginControl.Username + loginControl.Password);
+            MessageBox.Show(String.Format("Welcome, {0}! Here's your password for anyone looking over your shoulder: {1}", loginControl.Username, loginControl.Password),
+                "Login successful");
         }
     }
 }

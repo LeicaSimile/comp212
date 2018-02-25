@@ -38,7 +38,7 @@ namespace Q01_LoginUserControl
         }
         public static DependencyProperty UsernameProperty =
             DependencyProperty.Register(nameof(Username), typeof(string), typeof(LoginUserControl),
-                new PropertyMetadata("Username"));
+                new PropertyMetadata(""));
 
         public string Password
         {
@@ -53,6 +53,6 @@ namespace Q01_LoginUserControl
         }
         public static DependencyProperty PasswordProperty =
             DependencyProperty.Register(nameof(Password), typeof(string), typeof(LoginUserControl),
-                new PropertyMetadata("Password"));
+                new PropertyMetadata(""));
     }
 }

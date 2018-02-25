@@ -26,7 +26,11 @@ namespace Q02_Inventory
                 from item in inventory
                 orderby item.Description
                 select item;
-
+            foreach (var item in sortedByDescription)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
             // Use LINQ to select the item description and quantity, and sort the results by quantity
 
             // Use LINQ to select the item description and its total value (i.e., quantity * unit price),

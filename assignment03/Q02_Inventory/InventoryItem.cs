@@ -20,5 +20,10 @@ namespace Q02_Inventory
             this.Quantity = quantity;
             this.Price = price;
         }
+
+        public override string ToString()
+        {
+            return $"#{ItemNo}: {Description} - {Quantity} in stock - {Price:C}";
+        }
     }
 }

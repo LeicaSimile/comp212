@@ -22,6 +22,10 @@ namespace Q02_Inventory
                 };
 
             // Use LINQ to sort the data by item description
+            var sortedByDescription =
+                from item in inventory
+                orderby item.Description
+                select item;
 
             // Use LINQ to select the item description and quantity, and sort the results by quantity
 

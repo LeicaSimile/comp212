@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BooksExample;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace Question2
 {
     public partial class DisplayTitle : Form
     {
+        private BooksEntities db = new BooksEntities();
+
         public DisplayTitle()
         {
             InitializeComponent();
+        }
+
+        private void DisplayTitle_Load(object sender, EventArgs e)
+        {
+            // TODO: reference Entity framework
+            db.Titles.Load();
+            booksBindingSource.DataSource = db.Titles.Local;
         }
     }
 }

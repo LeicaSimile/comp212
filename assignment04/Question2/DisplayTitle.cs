@@ -22,8 +22,6 @@ namespace Question2
 
         private void DisplayTitle_Load(object sender, EventArgs e)
         {
-            // TODO: reference Entity framework
-            db.Titles.Load();
             booksBindingSource.DataSource = db.Titles.Local;
         }
     }

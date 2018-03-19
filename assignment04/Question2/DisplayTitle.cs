@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
+
+// Angelica Catalan, 300846458
 namespace Question2
 {
     public partial class DisplayTitle : Form
@@ -42,7 +44,7 @@ namespace Question2
             txtOutput.AppendText("Titles and authors (sorted by title):");
             foreach (var ele in titlesAndAuthors)
             {
-                txtOutput.AppendText(String.Format("\r\n\t{0, -50}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
+                txtOutput.AppendText(String.Format("\r\n\t{0, -70}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
             }
         }
 
@@ -62,7 +64,7 @@ namespace Question2
             txtOutput.AppendText("Titles and authors (sorted by title, author last name, author first name):");
             foreach (var ele in titlesAndAuthors)
             {
-                txtOutput.AppendText(String.Format("\r\n\t{0, -50}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
+                txtOutput.AppendText(String.Format("\r\n\t{0, -70}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
             }
         }
 
@@ -75,7 +77,11 @@ namespace Question2
                                      Title = title.Title1,
                                      Authors = from author in title.Authors
                                                orderby author.LastName, author.FirstName
-                                               select String.Format("{0} {1}", author.FirstName, author.LastName)
+                                               select new
+                                               {
+                                                   Firstname = author.FirstName,
+                                                   Lastname = author.LastName
+                                               }
                                  };
 
             txtOutput.Text = "";
@@ -85,7 +91,7 @@ namespace Question2
                 txtOutput.AppendText(String.Format("\r\n\t\"{0}\":", title.Title));
                 foreach (var author in title.Authors)
                 {
-                    txtOutput.AppendText(String.Format("\r\n\t{0}", author));
+                    txtOutput.AppendText(String.Format("\r\n\t\t{0} {1}", author.Firstname, author.Lastname));
                 }
             }
         }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// Angelica Catalan, 300846458
 namespace Question1
 {
     /// <summary>

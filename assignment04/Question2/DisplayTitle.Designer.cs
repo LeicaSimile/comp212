@@ -28,22 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnTitleSort = new System.Windows.Forms.Button();
             this.btnAuthorSort = new System.Windows.Forms.Button();
             this.btnGroupAuthors = new System.Windows.Forms.Button();
             this.txtOutput = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataSource = typeof(BooksExample.Title);
             // 
             // btnTitleSort
             // 
-            this.btnTitleSort.Location = new System.Drawing.Point(47, 338);
+            this.btnTitleSort.Location = new System.Drawing.Point(75, 338);
             this.btnTitleSort.Name = "btnTitleSort";
             this.btnTitleSort.Size = new System.Drawing.Size(124, 23);
             this.btnTitleSort.TabIndex = 2;
@@ -53,7 +46,7 @@
             // 
             // btnAuthorSort
             // 
-            this.btnAuthorSort.Location = new System.Drawing.Point(177, 338);
+            this.btnAuthorSort.Location = new System.Drawing.Point(205, 338);
             this.btnAuthorSort.Name = "btnAuthorSort";
             this.btnAuthorSort.Size = new System.Drawing.Size(124, 23);
             this.btnAuthorSort.TabIndex = 3;
@@ -63,7 +56,7 @@
             // 
             // btnGroupAuthors
             // 
-            this.btnGroupAuthors.Location = new System.Drawing.Point(307, 338);
+            this.btnGroupAuthors.Location = new System.Drawing.Point(335, 338);
             this.btnGroupAuthors.Name = "btnGroupAuthors";
             this.btnGroupAuthors.Size = new System.Drawing.Size(124, 23);
             this.btnGroupAuthors.TabIndex = 4;
@@ -73,18 +66,18 @@
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(47, 12);
+            this.txtOutput.Location = new System.Drawing.Point(12, 12);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(384, 306);
+            this.txtOutput.Size = new System.Drawing.Size(510, 306);
             this.txtOutput.TabIndex = 5;
             // 
             // DisplayTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 381);
+            this.ClientSize = new System.Drawing.Size(534, 381);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.btnGroupAuthors);
             this.Controls.Add(this.btnAuthorSort);
@@ -92,14 +85,12 @@
             this.Name = "DisplayTitle";
             this.Text = "Books";
             this.Load += new System.EventHandler(this.DisplayTitle_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource booksBindingSource;
         private System.Windows.Forms.Button btnTitleSort;
         private System.Windows.Forms.Button btnAuthorSort;
         private System.Windows.Forms.Button btnGroupAuthors;

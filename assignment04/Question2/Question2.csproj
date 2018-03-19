@@ -67,11 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BooksDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BooksDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DisplayTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +87,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BooksDataSet.xsc">
-      <DependentUpon>BooksDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BooksDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BooksDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BooksDataSet.xss">
-      <DependentUpon>BooksDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BooksExample.Author.datasource" />
     <None Include="Properties\DataSources\BooksExample.BooksEntities.datasource" />

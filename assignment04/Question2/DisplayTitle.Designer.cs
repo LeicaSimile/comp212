@@ -43,12 +43,15 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editionNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.copyrightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTitleSort = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -184,10 +187,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(543, 294);
             this.dataGridView1.TabIndex = 1;
             // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataSource = typeof(BooksExample.Title);
-            // 
             // iSBNDataGridViewTextBoxColumn
             // 
             this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
@@ -218,11 +217,45 @@
             this.authorsDataGridViewTextBoxColumn.HeaderText = "Authors";
             this.authorsDataGridViewTextBoxColumn.Name = "authorsDataGridViewTextBoxColumn";
             // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataSource = typeof(BooksExample.Title);
+            // 
+            // btnTitleSort
+            // 
+            this.btnTitleSort.Location = new System.Drawing.Point(92, 338);
+            this.btnTitleSort.Name = "btnTitleSort";
+            this.btnTitleSort.Size = new System.Drawing.Size(124, 23);
+            this.btnTitleSort.TabIndex = 2;
+            this.btnTitleSort.Text = "Sort Titles";
+            this.btnTitleSort.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(222, 338);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(124, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Sort Authors";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(352, 338);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(124, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Group Authors by Title";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // DisplayTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 334);
+            this.ClientSize = new System.Drawing.Size(568, 381);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTitleSort);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
             this.Name = "DisplayTitle";
@@ -259,6 +292,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn copyrightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource booksBindingSource;
+        private System.Windows.Forms.Button btnTitleSort;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

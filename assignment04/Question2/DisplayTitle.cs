@@ -23,33 +23,86 @@ namespace Question2
 
         private void DisplayTitle_Load(object sender, EventArgs e)
         {
-            db.Titles.Load();
-            db.Authors.Load();
-            DisplaySortedAuthors();
+            DisplaySortedTitle();
         }
 
         private void DisplaySortedTitle()
         {
-            booksBindingSource.DataSource = from book in db.Titles.Local
-                                            orderby book.Title1
-                                            select new
-                                            {
-                                                Title1 = book.Title1,
-                                                Authors = String.Join(", ", from author in book.Authors.ToList()
-                                                                            select String.Format("{0} {1}", author.FirstName, author.LastName))
-                                            };
+            var titlesAndAuthors = from book in db.Titles
+                                   from author in db.Authors
+                                   orderby book.Title1
+                                   select new
+                                   {
+                                       book.Title1,
+                                       author.FirstName,
+                                       author.LastName
+                                   };
+
+            txtOutput.Text = "";
+            txtOutput.AppendText("Titles and authors (sorted by title):");
+            foreach (var ele in titlesAndAuthors)
+            {
+                txtOutput.AppendText(String.Format("\r\n\t{0, -50}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
+            }
         }
 
         private void DisplaySortedAuthors()
         {
-            booksBindingSource.DataSource = from book in db.Titles.Local
-                                            from author in db.Authors.Local
-                                            orderby book.Title1, author.LastName, author.FirstName
-                                            select new
-                                            {
-                                                Title1 = book.Title1,
-                                                Authors = String.Format("{0} {1}", author.FirstName, author.LastName)
-                                            };
+            var titlesAndAuthors = from book in db.Titles
+                                   from author in db.Authors
+                                   orderby book.Title1, author.LastName, author.FirstName
+                                   select new
+                                   {
+                                       book.Title1,
+                                       author.FirstName,
+                                       author.LastName
+                                   };
+
+            txtOutput.Text = "";
+            txtOutput.AppendText("Titles and authors (sorted by title, author last name, author first name):");
+            foreach (var ele in titlesAndAuthors)
+            {
+                txtOutput.AppendText(String.Format("\r\n\t{0, -50}\t{1} {2}", ele.Title1, ele.FirstName, ele.LastName));
+            }
+        }
+
+        private void DisplayGroupedByTitle()
+        {
+            var authorsByTitle = from title in db.Titles
+                                 orderby title.Title1
+                                 select new
+                                 {
+                                     Title = title.Title1,
+                                     Authors = from author in title.Authors
+                                               orderby author.LastName, author.FirstName
+                                               select String.Format("{0} {1}", author.FirstName, author.LastName)
+                                 };
+
+            txtOutput.Text = "";
+            txtOutput.AppendText("Authors grouped by title:");
+            foreach (var title in authorsByTitle)
+            {
+                txtOutput.AppendText(String.Format("\r\n\t\"{0}\":", title.Title));
+                foreach (var author in title.Authors)
+                {
+                    txtOutput.AppendText(String.Format("\r\n\t{0}", author));
+                }
+            }
+        }
+
+        private void btnTitleSort_Click(object sender, EventArgs e)
+        {
+            DisplaySortedTitle();
+        }
+
+        private void btnAuthorSort_Click(object sender, EventArgs e)
+        {
+            DisplaySortedAuthors();
+        }
+
+        private void btnGroupAuthors_Click(object sender, EventArgs e)
+        {
+            DisplayGroupedByTitle();
         }
     }
 }

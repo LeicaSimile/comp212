@@ -1,0 +1,2 @@
+• Validating email: must have "@" then a "." at some point after
+• No duplicate subscriptions allowed

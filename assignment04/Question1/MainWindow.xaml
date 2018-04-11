@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Question1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="380" Width="525">
-    <Grid>
+        Title="Baseball Players" Height="380" Width="525">
+    <Grid Loaded="Grid_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -15,15 +15,20 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <DataGrid x:Name="dgPlayers" Grid.Row="0" AutoGenerateColumns="False" >
-            
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgtcId" Header="ID" />
+                <DataGridTextColumn x:Name="dgtcFirstName" Header="First name" />
+                <DataGridTextColumn x:Name="dgtcLastName" Header="Last name" />
+                <DataGridTextColumn x:Name="dgtcBattingAverage" Header="Batting average" />
+            </DataGrid.Columns>
         </DataGrid>
         
         <Label Grid.Row="1" Content="Last name: " Margin="85 20 0 0"/>
         <TextBox x:Name="txtLastName" Grid.Row="1" Width="200" Height="25" VerticalAlignment="Top" Margin="10 20" />
-        <Button x:Name="btnSearch" Grid.Row="1" Width="100" Height="25" Content="Search" VerticalAlignment="Top" Margin="340 20 0 0" />
+        <Button x:Name="btnSearch" Grid.Row="1" Width="100" Height="25" Content="Search" VerticalAlignment="Top" Margin="340 20 0 0" Click="btnSearch_Click" />
 
-        <Button x:Name="btnDisplayAll" Grid.Row="2" Width="120" Height="25" Content="Display all" />
+        <Button x:Name="btnDisplayAll" Grid.Row="2" Width="120" Height="25" Content="Display all" Click="btnDisplayAll_Click" />
     </Grid>
 </Window>

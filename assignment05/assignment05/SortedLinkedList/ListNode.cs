@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LinkedListLibrary
+namespace SortedLinkedList
 {
-    public class ListNode<T>
+    public class ListNode<T> where T : IComparable<T>
     {
         public T Data { get; private set; }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Angelica Catalan, 300846458
 namespace SortedLinkedList
 {
     public class SortedLinkedList<T> where T : IComparable<T>
@@ -42,8 +43,9 @@ namespace SortedLinkedList
             {
                 switch (item.CompareTo(current.Data))
                 {
-                    case 0:
                     case -1:
+                    case 0:
+                        // item <= current node's value
                         if (current == this.firstNode)
                         {
                             this.firstNode = newNode;
@@ -56,6 +58,7 @@ namespace SortedLinkedList
                         }
                         return;
                     case 1:
+                        // item > current node's value
                         break;
                 }
                 previous = current;
@@ -64,6 +67,7 @@ namespace SortedLinkedList
 
             if (item.CompareTo(current.Data) == -1)
             {
+                // item < current node's value
                 previous.Next = newNode;
                 newNode.Next = current;
             }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SortedLinkedList;
 
+// Angelica Catalan, 300846458
 namespace MergeSortedLinkedList
 {
     class Program
@@ -29,6 +30,7 @@ namespace MergeSortedLinkedList
             n2.Insert(7);
             n2.Display();
 
+            // Merge n1 and n2
             SortedLinkedList<int> merged = Merger<int>.Merge<int>(ref n1, ref n2);
             merged.Display();
             Console.ReadKey();

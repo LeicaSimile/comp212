@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+// Angelica Catalan, 300846458
 namespace SortedLinkedList
 {
     public class ListNode<T> where T : IComparable<T>

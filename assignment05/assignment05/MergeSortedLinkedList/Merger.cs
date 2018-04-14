@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SortedLinkedList;
 
+// Angelica Catalan, 300846458
 namespace MergeSortedLinkedList
 {
     class Merger<T> where T : IComparable<T>

@@ -17,7 +17,7 @@ namespace SortedLinkedList
       
          // constructor to create ListNode that refers to dataValue
         // and refers to next ListNode in List
-        public ListNode(T dataValue, ListNode<T> nextNode)
+        public ListNode(T dataValue, ListNode<T> nextNode=null)
         {
             Data = dataValue;
             Next = nextNode;

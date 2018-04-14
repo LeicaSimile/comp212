@@ -11,6 +11,14 @@ namespace SortedLinkedList
         private ListNode<T> firstNode;
         private string name;
 
+        public ListNode<T> FirstNode
+        {
+            get
+            {
+                return this.firstNode;
+            }
+        }
+
         public SortedLinkedList(string listName)
         {
             name = listName;
@@ -34,6 +42,7 @@ namespace SortedLinkedList
             {
                 switch (item.CompareTo(current.Data))
                 {
+                    case 0:
                     case -1:
                         if (current == this.firstNode)
                         {
@@ -46,7 +55,6 @@ namespace SortedLinkedList
                             newNode.Next = current;
                         }
                         return;
-                    case 0:
                     case 1:
                         break;
                 }
